@@ -1,7 +1,7 @@
 import { hot } from 'react-hot-loader/root';
 
 import React from 'react';
-import styles from './header.less'
+import styles from './test.css'
 import { starWars, uniqueNamesGenerator } from 'unique-names-generator';
 
 // interface IStarWarsNameClassState {
