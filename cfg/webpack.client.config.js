@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV === 'development';
 const IS_PROD = NODE_ENV === 'production';
+const GLOBAL_CSS_REGEXP = /\.global\.css$/;
 
 function setupDevtool() {
     if (IS_DEV) return 'eval';
@@ -35,9 +36,10 @@ module.exports = {
                 use: ['ts-loader']
             },
             {
-                test: /\.less$/,
+                test: /\.css$/,
                 use: [
-                    'style-loader', {
+                    'style-loader',
+                    {
                         loader: 'css-loader',
                         options: {
                             modules: {
@@ -46,8 +48,12 @@ module.exports = {
                             }
                         }
                     },
-                    'less-loader',
-                ]
+                ],
+                exclude: GLOBAL_CSS_REGEXP
+            },
+            {
+                test: GLOBAL_CSS_REGEXP,
+                use: ['style-loader', 'css-loader']
             }
         ]
     },
@@ -55,5 +61,5 @@ module.exports = {
     plugins: IS_DEV ? [
         new CleanWebpackPlugin(),
         new HotModuleReplacementPlugin()
-    ] : []
+    ] : [],
 };
