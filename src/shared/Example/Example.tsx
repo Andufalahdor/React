@@ -3,6 +3,7 @@ import styles from './example.css';
 import { preventDefault } from '../../utils/react/preventDefault';
 import { stopPropagation } from '../../utils/react/stopPropagation';
 import { withKey } from '../../utils/react/withKey';
+import { getValue, pickFromSyntheticEvent } from '../../utils/react/pickFromSyntheticEvent';
 
 export function Example() {
   return (
@@ -64,16 +65,6 @@ function Checkbox(props: {onChange: (value: boolean) => void, value: boolean}) {
     <input type="checkbox" checked={props.value} onChange={getChecked(props.onChange)} />
   )
 }
-
-function pickFromSyntheticEvent<T extends HTMLElement>() {
-  return <K extends keyof T>(key: K) =>
-  <E extends ((t: T[K]) => void)>(fn: E) =>
-  (e: React.SyntheticEvent<T>) =>
-  fn(e.currentTarget[key])
-}
-
-export const getValue = pickFromSyntheticEvent<HTMLInputElement>()('value');
-export const getChecked = pickFromSyntheticEvent<HTMLInputElement>()('checked')
 
 function NotStandardLink(props: any) {
   const handleClick = (e: React.SyntheticEvent<HTMLAnchorElement>) => {
