@@ -8,13 +8,9 @@ import { TextContent } from './TextContent';
 export function Card() {
   return (
     <li className={styles.card}>
-      {/* <div className={styles.textContent}></div> */} 
       <TextContent />
-      {/* <div className={styles.preview}></div> */}
       <Preview />
-      {/* <div className={styles.menu}></div> */}
       <Menu />
-      {/* <div className={styles.controls}></div> */}
       <Controls />
     </li>
   );

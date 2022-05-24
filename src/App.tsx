@@ -5,15 +5,17 @@ import { Layout } from "./shared/Layout";
 import { Header } from "./shared/Header";
 import { Content } from "./shared/Content";
 import { CardsList } from "./shared/CardsList";
+import { Example } from "./shared/Example";
 
 export function AppComponent() {
     return (
-    <Layout>
-        <Header />
-            <Content>
-            <CardsList />
-            </Content>
-    </Layout>
+    // <Layout>
+    //     <Header />
+    //         <Content>
+    //         <CardsList />
+    //         </Content>
+    // </Layout>
+    <Example />
     );
 }
 
