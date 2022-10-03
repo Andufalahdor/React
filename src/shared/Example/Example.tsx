@@ -62,7 +62,8 @@ function Input(props: { onChange: (value: string) => void, value: string}) {
 function Checkbox(props: {onChange: (value: boolean) => void, value: boolean}) {
   return (
     // <input type="checkbox" checked={props.value} onChange={(e) => props.onChange(e.currentTarget.checked)} />
-    <input type="checkbox" checked={props.value} onChange={getChecked(props.onChange)} />
+    // <input type="checkbox" checked={props.value} onChange={getChecked(props.onChange)} />
+    123
   )
 }
 

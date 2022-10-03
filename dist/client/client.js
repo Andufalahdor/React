@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "ee5c891a22ad413fcf91";
+/******/ 	var hotCurrentHash = "f55821e40f19c0469a3f";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1514,7 +1514,7 @@ eval("\r\nmodule.exports = function (module) {\r\n    if (!module.webpackPolyfil
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.App = exports.AppComponent = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\n__webpack_require__(/*! ./main.global.css */ \"./src/main.global.css\");\r\nvar root_1 = __webpack_require__(/*! react-hot-loader/root */ \"./node_modules/react-hot-loader/root.js\");\r\nvar Layout_1 = __webpack_require__(/*! ./shared/Layout */ \"./src/shared/Layout/index.ts\");\r\nvar Header_1 = __webpack_require__(/*! ./shared/Header */ \"./src/shared/Header/index.ts\");\r\nvar Content_1 = __webpack_require__(/*! ./shared/Content */ \"./src/shared/Content/index.ts\");\r\nvar CardsList_1 = __webpack_require__(/*! ./shared/CardsList */ \"./src/shared/CardsList/index.ts\");\r\nvar HooksExample_1 = __webpack_require__(/*! ./shared/HooksExample */ \"./src/shared/HooksExample/index.ts\");\r\nvar pickFromSyntheticEvent_1 = __webpack_require__(/*! ./utils/react/pickFromSyntheticEvent */ \"./src/utils/react/pickFromSyntheticEvent.tsx\");\r\nfunction AppComponent() {\r\n    // const [isVisible, setIsVisible] = React.useState(false);\r\n    var _a = react_1.default.useState(''), title = _a[0], setTitle = _a[1];\r\n    var isVisible = (0, HooksExample_1.useIsMounted)()[0];\r\n    return (react_1.default.createElement(Layout_1.Layout, null,\r\n        react_1.default.createElement(Header_1.Header, null),\r\n        react_1.default.createElement(Content_1.Content, null,\r\n            react_1.default.createElement(CardsList_1.CardsList, null),\r\n            react_1.default.createElement(\"input\", { type: \"text\", onChange: (0, pickFromSyntheticEvent_1.getValue)(setTitle) }),\r\n            isVisible && react_1.default.createElement(HooksExample_1.HooksExample, { title: title, id: \"11\" }))));\r\n}\r\nexports.AppComponent = AppComponent;\r\nexports.App = (0, root_1.hot)(function () { return react_1.default.createElement(AppComponent, null); });\r\n\n\n//# sourceURL=webpack:///./src/App.tsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.App = exports.AppComponent = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\n__webpack_require__(/*! ./main.global.css */ \"./src/main.global.css\");\r\nvar root_1 = __webpack_require__(/*! react-hot-loader/root */ \"./node_modules/react-hot-loader/root.js\");\r\nvar Layout_1 = __webpack_require__(/*! ./shared/Layout */ \"./src/shared/Layout/index.ts\");\r\nvar Header_1 = __webpack_require__(/*! ./shared/Header */ \"./src/shared/Header/index.ts\");\r\nvar Content_1 = __webpack_require__(/*! ./shared/Content */ \"./src/shared/Content/index.ts\");\r\nvar CardsList_1 = __webpack_require__(/*! ./shared/CardsList */ \"./src/shared/CardsList/index.ts\");\r\nvar generateRandomIndex_1 = __webpack_require__(/*! ./utils/react/generateRandomIndex */ \"./src/utils/react/generateRandomIndex.ts\");\r\nvar MyList_1 = __webpack_require__(/*! ./shared/Content/MyList */ \"./src/shared/Content/MyList/index.ts\");\r\nvar merge_1 = __webpack_require__(/*! ./utils/js/merge */ \"./src/utils/js/merge.ts\");\r\n// const LIST = [\r\n//     { value: 'some'},\r\n//     { value: 'other some'},\r\n//     { value: 'some'},\r\n// ].map(generateId)\r\nvar LIST = [\r\n    { text: 'some' },\r\n    { text: 'other some' },\r\n    { text: 'some' },\r\n].map(generateRandomIndex_1.generateId);\r\nfunction AppComponent() {\r\n    // const [isVisible, setIsVisible] = React.useState(false);\r\n    // const [title, setTitle] = React.useState('');\r\n    // const [isVisible] = useIsMounted()\r\n    var _a = react_1.default.useState(LIST), list = _a[0], setList = _a[1];\r\n    // Хендл удаления айтемов\r\n    var handleItemClick = function (id) {\r\n        setList(list.filter(function (item) { return item.id != id; }));\r\n        // console.log(id)\r\n    };\r\n    // Хендл добавления айтемов\r\n    var handleAdd = function () {\r\n        setList(list.concat((0, generateRandomIndex_1.generateId)({ text: (0, generateRandomIndex_1.generateRandomString)() })));\r\n    };\r\n    return (react_1.default.createElement(Layout_1.Layout, null,\r\n        react_1.default.createElement(Header_1.Header, null),\r\n        react_1.default.createElement(Content_1.Content, null,\r\n            react_1.default.createElement(CardsList_1.CardsList, null),\r\n            react_1.default.createElement(\"button\", { onClick: handleAdd }, \"Add element\"),\r\n            react_1.default.createElement(MyList_1.GenericList, { list: list.map((0, merge_1.merge)({ onClick: handleItemClick })) }))));\r\n}\r\nexports.AppComponent = AppComponent;\r\nexports.App = (0, root_1.hot)(function () { return react_1.default.createElement(AppComponent, null); });\r\n\n\n//# sourceURL=webpack:///./src/App.tsx?");
 
 /***/ }),
 
@@ -1949,6 +1949,30 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 
 /***/ }),
 
+/***/ "./src/shared/Content/MyList/MyList.tsx":
+/*!**********************************************!*\
+  !*** ./src/shared/Content/MyList/MyList.tsx ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.GenericList = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nfunction GenericList(_a) {\r\n    var list = _a.list;\r\n    return (react_1.default.createElement(react_1.default.Fragment, null,\r\n        console.log(list),\r\n        list.map(function (_a) {\r\n            var _b = _a.As, As = _b === void 0 ? 'li' : _b, text = _a.text, onClick = _a.onClick, className = _a.className, id = _a.id, href = _a.href;\r\n            return (react_1.default.createElement(As, { className: className, onClick: function () { return onClick(id); }, key: id, href: href }, text));\r\n        })));\r\n}\r\nexports.GenericList = GenericList;\r\n\n\n//# sourceURL=webpack:///./src/shared/Content/MyList/MyList.tsx?");
+
+/***/ }),
+
+/***/ "./src/shared/Content/MyList/index.ts":
+/*!********************************************!*\
+  !*** ./src/shared/Content/MyList/index.ts ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./MyList */ \"./src/shared/Content/MyList/MyList.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/Content/MyList/index.ts?");
+
+/***/ }),
+
 /***/ "./src/shared/Content/content.css":
 /*!****************************************!*\
   !*** ./src/shared/Content/content.css ***!
@@ -2100,30 +2124,6 @@ eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create
 
 /***/ }),
 
-/***/ "./src/shared/HooksExample/HooksExample.tsx":
-/*!**************************************************!*\
-  !*** ./src/shared/HooksExample/HooksExample.tsx ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.useIsMounted = exports.HooksExample = void 0;\r\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\n// Какие бывают хуки:\r\n// 1. useState \r\n// 2. useEffect\r\n// 3. useRef\r\n// 4. useReducer\r\n// 5. useMemo\r\n// 6. useContext\r\n// 7. UseCallback\r\n// 8. useImperativeHandle\r\n// 9. useLayoutEffect\r\n// 10. useDebugValue\r\nfunction HooksExample(_a) {\r\n    // Если не передавать зависимость 2 аргументом в useEffect, хук будет отрабатывать как componentDidMount и componentWillUpdate\r\n    // React.useEffect(() => {\r\n    //   console.log('componentDidMount');\r\n    //   console.log('componentWillUpdate');\r\n    // });\r\n    var title = _a.title, id = _a.id;\r\n    // Если передать пустой массив 2 аргументом, хук будет отрабатывать как componentDidMount\r\n    // React.useEffect(() => {\r\n    //   console.log('componentDidMount');\r\n    //   return () => {\r\n    //         console.log('componentWillUnmount');\r\n    //       }\r\n    // }, []);\r\n    // В данном примере useEffect будет срабатывать каждый раз когда будет изменено свойство title, включая первый рендер.\r\n    // React.useEffect(() => {\r\n    //   console.log('componentWillReceiveProps: ', title);\r\n    // }, [title]);\r\n    // React.useEffect(() => {\r\n    //   console.log('componentDidMount');\r\n    //   // Можем вернуть функцию которая будет вызвана перед componentWillUnmount\r\n    //   return () => {\r\n    //     console.log('componentWillUnmount');\r\n    //   }\r\n    // }, []);\r\n    // const [isMounted] = useIsMounted();\r\n    // React.useEffect(() => {\r\n    // console.log('isMounted', isMounted);\r\n    // }, [isMounted])\r\n    var items = 10;\r\n    var multiplier = 5;\r\n    var result = react_1.default.useMemo(function () {\r\n        console.log('CALC');\r\n        calculate(items, multiplier);\r\n    }, [items, multiplier]);\r\n    return (react_1.default.createElement(\"div\", null,\r\n        title,\r\n        \" \",\r\n        id,\r\n        \" \",\r\n        result));\r\n}\r\nexports.HooksExample = HooksExample;\r\n// Пишем собственный хук \r\nfunction useIsMounted() {\r\n    var _a = react_1.default.useState(false), isMounted = _a[0], setIsMounted = _a[1];\r\n    react_1.default.useEffect(function () {\r\n        setIsMounted(true);\r\n    }, []);\r\n    return [isMounted];\r\n}\r\nexports.useIsMounted = useIsMounted;\r\nfunction calculate(items, multiplier) {\r\n    return new Array(items).fill(1).reduce(function (a, v) { return a * multiplier; });\r\n}\r\n\n\n//# sourceURL=webpack:///./src/shared/HooksExample/HooksExample.tsx?");
-
-/***/ }),
-
-/***/ "./src/shared/HooksExample/index.ts":
-/*!******************************************!*\
-  !*** ./src/shared/HooksExample/index.ts ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __exportStar = (this && this.__exportStar) || function(m, exports) {\r\n    for (var p in m) if (p !== \"default\" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__exportStar(__webpack_require__(/*! ./HooksExample */ \"./src/shared/HooksExample/HooksExample.tsx\"), exports);\r\n\n\n//# sourceURL=webpack:///./src/shared/HooksExample/index.ts?");
-
-/***/ }),
-
 /***/ "./src/shared/Layout/Layout.tsx":
 /*!**************************************!*\
   !*** ./src/shared/Layout/Layout.tsx ***!
@@ -2159,15 +2159,39 @@ eval("var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/
 
 /***/ }),
 
-/***/ "./src/utils/react/pickFromSyntheticEvent.tsx":
-/*!****************************************************!*\
-  !*** ./src/utils/react/pickFromSyntheticEvent.tsx ***!
-  \****************************************************/
+/***/ "./src/utils/js/assoc.ts":
+/*!*******************************!*\
+  !*** ./src/utils/js/assoc.ts ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.getChecked = exports.getValue = exports.pickFromSyntheticEvent = void 0;\r\nfunction pickFromSyntheticEvent() {\r\n    return function (key) { return function (fn) { return function (e) { return fn(e.currentTarget[key]); }; }; };\r\n}\r\nexports.pickFromSyntheticEvent = pickFromSyntheticEvent;\r\nexports.getValue = pickFromSyntheticEvent()('value');\r\nexports.getChecked = pickFromSyntheticEvent()('checked');\r\n\n\n//# sourceURL=webpack:///./src/utils/react/pickFromSyntheticEvent.tsx?");
+eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assign = Object.assign || function(t) {\r\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n            s = arguments[i];\r\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n                t[p] = s[p];\r\n        }\r\n        return t;\r\n    };\r\n    return __assign.apply(this, arguments);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.assoc = void 0;\r\nfunction assoc(key, value) {\r\n    return function (obj) {\r\n        var _a;\r\n        return (__assign(__assign({}, obj), (_a = {}, _a[key] = value, _a)));\r\n    };\r\n}\r\nexports.assoc = assoc;\r\n\n\n//# sourceURL=webpack:///./src/utils/js/assoc.ts?");
+
+/***/ }),
+
+/***/ "./src/utils/js/merge.ts":
+/*!*******************************!*\
+  !*** ./src/utils/js/merge.ts ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __assign = (this && this.__assign) || function () {\r\n    __assign = Object.assign || function(t) {\r\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n            s = arguments[i];\r\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n                t[p] = s[p];\r\n        }\r\n        return t;\r\n    };\r\n    return __assign.apply(this, arguments);\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.merge = void 0;\r\nfunction merge(obj) {\r\n    return function (obj2) { return (__assign(__assign({}, obj), obj2)); };\r\n}\r\nexports.merge = merge;\r\n\n\n//# sourceURL=webpack:///./src/utils/js/merge.ts?");
+
+/***/ }),
+
+/***/ "./src/utils/react/generateRandomIndex.ts":
+/*!************************************************!*\
+  !*** ./src/utils/react/generateRandomIndex.ts ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.generateId = exports.assignId = exports.generateRandomString = void 0;\r\n// nanoid\r\nvar assoc_1 = __webpack_require__(/*! ./../js/assoc */ \"./src/utils/js/assoc.ts\");\r\nvar generateRandomString = function () { return Math.random().toString(36).substring(2, 15); };\r\nexports.generateRandomString = generateRandomString;\r\nexports.assignId = (0, assoc_1.assoc)('id', (0, exports.generateRandomString)());\r\nvar generateId = function (obj) { return (0, assoc_1.assoc)('id', (0, exports.generateRandomString)())(obj); };\r\nexports.generateId = generateId;\r\n\n\n//# sourceURL=webpack:///./src/utils/react/generateRandomIndex.ts?");
 
 /***/ }),
 

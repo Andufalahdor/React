@@ -18,16 +18,16 @@ export function HooksExample({title, id} : {title: string, id?: string}) {
 
   // Если не передавать зависимость 2 аргументом в useEffect, хук будет отрабатывать как componentDidMount и componentWillUpdate
   // React.useEffect(() => {
-  //   console.log('componentDidMount');
-  //   console.log('componentWillUpdate');
+  //   console.log('componentDidMount'); // componentDidMount - первый рендер 
+  //   console.log('componentWillUpdate'); // componentWillUpdate - последующие рендеры 
   // });
 
-  // Если передать пустой массив 2 аргументом, хук будет отрабатывать как componentDidMount
+  // Если передать пустой массив 2 аргументом, хук будет отрабатывать как componentDidMount - только первый рендер. 
+  // 2 аргумент - зависимости 
   // React.useEffect(() => {
   //   console.log('componentDidMount');
   //   return () => {
   //         console.log('componentWillUnmount');
-          
   //       }
   // }, []);
 
@@ -40,6 +40,7 @@ export function HooksExample({title, id} : {title: string, id?: string}) {
   // React.useEffect(() => {
   //   console.log('componentDidMount');
   //   // Можем вернуть функцию которая будет вызвана перед componentWillUnmount
+
   //   return () => {
   //     console.log('componentWillUnmount');
       
@@ -50,22 +51,21 @@ export function HooksExample({title, id} : {title: string, id?: string}) {
   // const [isMounted] = useIsMounted();
 
   // React.useEffect(() => {
-    // console.log('isMounted', isMounted);
+  //   console.log('isMounted', isMounted);
     
   // }, [isMounted])
 
-  const items = 10
-const multiplier = 5
+  const items = 100
+  const multiplier = 5
+  
   const result = React.useMemo(
-    () => {
-      console.log('CALC');
-      calculate(items, multiplier)
-    },
+    () => 
+      calculate(items, multiplier),
     [items, multiplier]
   )
 
   return (
-<div>{title} {id} {result}</div>
+<div>title: {title} id: {id} result: {result}</div>
   );
 
     
@@ -82,6 +82,6 @@ export function useIsMounted() {
   return [isMounted]
 }
 
-function calculate(items: number, multiplier: number) {
+function calculate(items: number, multiplier: number): number {
   return new Array(items).fill(1).reduce((a, v) => a * multiplier);
 }
