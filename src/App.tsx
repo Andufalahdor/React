@@ -10,6 +10,7 @@ import { getValue } from "./utils/react/pickFromSyntheticEvent";
 import { generateId, generateRandomString } from "./utils/react/generateRandomIndex";
 import { GenericList} from "./shared/Content/MyList";
 import { merge } from './utils/js/merge';
+import { Dropdown } from './shared/Dropdown/Dropdown';
 
 // const LIST = [
 //     { value: 'some'},
@@ -17,29 +18,29 @@ import { merge } from './utils/js/merge';
 //     { value: 'some'},
 // ].map(generateId)
 
-const LIST = [
-    { text: 'some'},
-    { text: 'other some'},
-    { text: 'some'},
-].map(generateId)
+// const LIST = [
+//     { text: 'some'},
+//     { text: 'other some'},
+//     { text: 'some'},
+// ].map(generateId)
 
 export function AppComponent() {
     // const [isVisible, setIsVisible] = React.useState(false);
     // const [title, setTitle] = React.useState('');
     // const [isVisible] = useIsMounted()
-    const [list, setList] = React.useState(LIST);
+    // const [list, setList] = React.useState(LIST);
 
-    // Хендл удаления айтемов
-    const handleItemClick = (id: string) => {
-        setList(list.filter((item) => item.id != id));
-        // console.log(id)
-    }
+    // handle delete items
+    // const handleItemClick = (id: string) => {
+    //     setList(list.filter((item) => item.id != id));
+    //     // console.log(id)
+    // }
 
-    // Хендл добавления айтемов
-    const handleAdd = () => {
-        setList(list.concat(
-            generateId({ text: generateRandomString() })))
-    }
+    // handle add items 
+    // const handleAdd = () => {
+    //     setList(list.concat(
+    //         generateId({ text: generateRandomString() })))
+    // }
 
     return (
     <Layout>
@@ -51,10 +52,26 @@ export function AppComponent() {
             {/* {isVisible && <HooksExample title={title} id="10" />} */}
             {/* <HooksExample title={title} id="10"/> */}
             {/* {console.log(LIST)} */}
-            <button onClick={handleAdd}>Add element</button>
+            {/* <button onClick={handleAdd}>Add element</button> */}
             {/* <MyList list={list.map(merge({ onClick: handleItemClick}))}/> */}
-            <GenericList list={list.map(merge({ onClick: handleItemClick}))}/>
+            {/* <GenericList list={list.map(merge({ onClick: handleItemClick}))}/> */}
         </Content>
+        <Dropdown 
+            onClose={() => console.log('closed')}
+            onOpen={() => console.log('open')}
+            isOpen={false}
+            button={<button>Test</button>}>
+
+            <div style={{ padding: 20 }}>
+            <br/>
+            <ul>
+                <li onClick={console.log}>
+                    Click me!
+                </li>
+                <li>Don't click me!</li>
+            </ul>
+            </div>
+        </Dropdown>
     </Layout>
     );
 }
