@@ -28,6 +28,15 @@
     background-color: var(--white);
 }
 
+.dropdown li {
+    cursor: pointer;
+    padding: 3px;
+}
+
+.dropdown li:hover {
+    font-weight: bold;
+}
+
 .closeButton {
     background-color: var(--greyD9);
     padding: 12px 23px;

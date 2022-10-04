@@ -5,12 +5,12 @@ import { Layout } from "./shared/Layout";
 import { Header } from "./shared/Header";
 import { Content } from "./shared/Content";
 import { CardsList } from "./shared/CardsList";
-import { HooksExample, useIsMounted } from "./shared/HooksExample";
-import { getValue } from "./utils/react/pickFromSyntheticEvent";
-import { generateId, generateRandomString } from "./utils/react/generateRandomIndex";
-import { GenericList} from "./shared/Content/MyList";
-import { merge } from './utils/js/merge';
-import { Dropdown } from './shared/Dropdown/Dropdown';
+// import { HooksExample, useIsMounted } from "./shared/HooksExample";
+// import { getValue } from "./utils/react/pickFromSyntheticEvent";
+// import { generateId, generateRandomString } from "./utils/react/generateRandomIndex";
+// import { GenericList} from "./shared/Content/MyList";
+// import { merge } from './utils/js/merge';
+// import { Dropdown } from './shared/Dropdown/Dropdown';
 
 // const LIST = [
 //     { value: 'some'},
@@ -56,7 +56,7 @@ export function AppComponent() {
             {/* <MyList list={list.map(merge({ onClick: handleItemClick}))}/> */}
             {/* <GenericList list={list.map(merge({ onClick: handleItemClick}))}/> */}
         </Content>
-        <Dropdown 
+        {/* <Dropdown 
             onClose={() => console.log('closed')}
             onOpen={() => console.log('open')}
             isOpen={false}
@@ -71,7 +71,7 @@ export function AppComponent() {
                 <li>Don't click me!</li>
             </ul>
             </div>
-        </Dropdown>
+        </Dropdown> */}
     </Layout>
     );
 }
