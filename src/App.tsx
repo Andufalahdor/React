@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './main.global.css'
+import "./main.global.css";
 import { hot } from "react-hot-loader/root";
 import { Layout } from "./shared/Layout";
 import { Header } from "./shared/Header";
@@ -25,38 +25,38 @@ import { CardsList } from "./shared/CardsList";
 // ].map(generateId)
 
 export function AppComponent() {
-    // const [isVisible, setIsVisible] = React.useState(false);
-    // const [title, setTitle] = React.useState('');
-    // const [isVisible] = useIsMounted()
-    // const [list, setList] = React.useState(LIST);
+  // const [isVisible, setIsVisible] = React.useState(false);
+  // const [title, setTitle] = React.useState('');
+  // const [isVisible] = useIsMounted()
+  // const [list, setList] = React.useState(LIST);
 
-    // handle delete items
-    // const handleItemClick = (id: string) => {
-    //     setList(list.filter((item) => item.id != id));
-    //     // console.log(id)
-    // }
+  // handle delete items
+  // const handleItemClick = (id: string) => {
+  //     setList(list.filter((item) => item.id != id));
+  //     // console.log(id)
+  // }
 
-    // handle add items 
-    // const handleAdd = () => {
-    //     setList(list.concat(
-    //         generateId({ text: generateRandomString() })))
-    // }
+  // handle add items
+  // const handleAdd = () => {
+  //     setList(list.concat(
+  //         generateId({ text: generateRandomString() })))
+  // }
 
-    return (
+  return (
     <Layout>
-        <Header />
-        <Content>
-            <CardsList />
-            {/* <button onClick={() => setIsVisible(!isVisible)}> Change me! </button> */}
-            {/* <input type="text" onChange={getValue(setTitle)} /> */}
-            {/* {isVisible && <HooksExample title={title} id="10" />} */}
-            {/* <HooksExample title={title} id="10"/> */}
-            {/* {console.log(LIST)} */}
-            {/* <button onClick={handleAdd}>Add element</button> */}
-            {/* <MyList list={list.map(merge({ onClick: handleItemClick}))}/> */}
-            {/* <GenericList list={list.map(merge({ onClick: handleItemClick}))}/> */}
-        </Content>
-        {/* <Dropdown 
+      <Header />
+      <Content>
+        <CardsList />
+        {/* <button onClick={() => setIsVisible(!isVisible)}> Change me! </button> */}
+        {/* <input type="text" onChange={getValue(setTitle)} /> */}
+        {/* {isVisible && <HooksExample title={title} id="10" />} */}
+        {/* <HooksExample title={title} id="10"/> */}
+        {/* {console.log(LIST)} */}
+        {/* <button onClick={handleAdd}>Add element</button> */}
+        {/* <MyList list={list.map(merge({ onClick: handleItemClick}))}/> */}
+        {/* <GenericList list={list.map(merge({ onClick: handleItemClick}))}/> */}
+      </Content>
+      {/* <Dropdown 
             onClose={() => console.log('closed')}
             onOpen={() => console.log('open')}
             isOpen={false}
@@ -73,7 +73,7 @@ export function AppComponent() {
             </div>
         </Dropdown> */}
     </Layout>
-    );
+  );
 }
 
-export const App = hot(() => <AppComponent />)
+export const App = hot(() => <AppComponent />);
