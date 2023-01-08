@@ -1,14 +1,16 @@
 import React from "react";
 import styles from "./menu.css";
 import { Dropdown } from "./../../../Dropdown/Dropdown";
-import { generateId } from "./../../../../utils/react/generateRandomIndex";
-import { GenericList } from "../../../Content/GenericList";
+// import { generateId } from "./../../../../utils/react/generateRandomIndex";
+// import { GenericList } from "../../../Content/GenericList";
+import { MenuIcon } from "../../../Icons";
+import { MenuItemsList } from "./MenuItemsList";
 
-const LIST = [
-  { text: "Редактировать" },
-  { text: "Переместить" },
-  { text: "Удалить" },
-].map(generateId);
+// const LIST = [
+//   { text: "Редактировать" },
+//   { text: "Переместить" },
+//   { text: "Закрыть", className: styles.closeButton },
+// ].map(generateId);
 
 export function Menu() {
   return (
@@ -16,22 +18,17 @@ export function Menu() {
       <Dropdown
         button={
           <button className={styles.menuButton}>
-            <svg
-              width="5"
-              height="20"
-              viewBox="0 0 5 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="2.5" cy="2.5" r="2.5" fill="#D9D9D9" />
-              <circle cx="2.5" cy="10" r="2.5" fill="#D9D9D9" />
-              <circle cx="2.5" cy="17.5" r="2.5" fill="#D9D9D9" />
-            </svg>
+            <MenuIcon></MenuIcon>
           </button>
         }
       >
         <ul className={styles.dropdown}>
-          <GenericList list={LIST} />
+          {/* <GenericList list={LIST} /> */}
+          <MenuItemsList postId="1488" />
+          <button className={styles.closeButton}>
+            <span>Закрыть</span>
+            {/* <Text mobileSize={12} size={14} color={EColors.grey66}>Закрыть</Text> */}
+          </button>
         </ul>
       </Dropdown>
     </div>
