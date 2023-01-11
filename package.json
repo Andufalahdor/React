@@ -17,6 +17,7 @@
     "license": "ISC",
     "devDependencies": {
         "@hot-loader/react-dom": "^17.0.2",
+        "@types/classnames": "^2.3.1",
         "@types/enzyme": "^3.10.12",
         "@types/enzyme-adapter-react-16": "^1.0.6",
         "@types/jest": "^25.1.4",
@@ -44,6 +45,7 @@
         "webpack-node-externals": "^3.0.0"
     },
     "dependencies": {
+        "classnames": "^2.3.2",
         "enzyme-to-json": "^3.6.2",
         "express": "^4.17.2",
         "identity-obj-proxy": "^3.0.0",
