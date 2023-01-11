@@ -5,6 +5,7 @@ import { Dropdown } from "./../../../Dropdown/Dropdown";
 // import { GenericList } from "../../../Content/GenericList";
 import { MenuIcon } from "../../../Icons";
 import { MenuItemsList } from "./MenuItemsList";
+import { Text, EColors } from "../../../Text";
 
 // const LIST = [
 //   { text: "Редактировать" },
@@ -26,8 +27,9 @@ export function Menu() {
           {/* <GenericList list={LIST} /> */}
           <MenuItemsList postId="1488" />
           <button className={styles.closeButton}>
-            <span>Закрыть</span>
-            {/* <Text mobileSize={12} size={14} color={EColors.grey66}>Закрыть</Text> */}
+            <Text mobileSize={12} size={14} color={EColors.gray66}>
+              Закрыть
+            </Text>
           </button>
         </ul>
       </Dropdown>

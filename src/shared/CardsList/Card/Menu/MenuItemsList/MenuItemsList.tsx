@@ -1,6 +1,7 @@
 import React from "react";
 import { BlockIcon, WarningIcon } from "../../../../Icons";
 import styles from "./menuitemslist.css";
+import { Text, EColors } from "../../../../Text";
 
 interface IMenuItemsListProps {
   postId?: string;
@@ -15,15 +16,19 @@ export function MenuItemsList({ postId }: IMenuItemsListProps) {
           console.log(postId);
         }}
       >
-        <BlockIcon /> <span>Скрыть</span>
-        {/* <Text size={12} color={EСolors.grey99}>Скрыть</Text> */}
+        <BlockIcon />
+        <Text size={12} color={EColors.gray99}>
+          Скрыть
+        </Text>
       </li>
 
       <div className={styles.divider} />
 
       <li>
-        <WarningIcon /> <span>Пожаловаться</span>
-        {/* <Text size={12} color={EСolors.grey99}>Пожаловаться</Text> */}
+        <WarningIcon />
+        <Text size={12} color={EColors.gray99}>
+          Пожаловаться
+        </Text>
       </li>
     </ul>
   );
