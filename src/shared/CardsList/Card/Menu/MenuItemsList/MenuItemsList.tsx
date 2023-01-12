@@ -1,12 +1,4 @@
 import React from "react";
-import {
-  BlockIcon,
-  WarningIcon,
-  CommentIcon,
-  HideIcon,
-  SharedIcon,
-  SaveIcon,
-} from "../../../../Icons";
 import styles from "./menuitemslist.css";
 import { Text, EColors } from "../../../../Text";
 import { Icon, EIcons } from "../../../../Icon";
