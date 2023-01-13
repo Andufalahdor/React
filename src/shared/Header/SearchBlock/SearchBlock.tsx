@@ -7,7 +7,7 @@ export function SearchBlock() {
     <>
       <UserBlock />
 
-      <div className={styles.searchBlock}>search block</div>
+      {/* <div className={styles.searchBlock}>search block</div> */}
     </>
   );
 }

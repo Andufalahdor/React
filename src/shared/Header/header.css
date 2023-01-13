@@ -10,5 +10,7 @@
 @media all and (min-width: 1540px) {
     .header {
         padding: 67px 0;
+        display: flex;
+        justify-content: space-between;
     }
 }
