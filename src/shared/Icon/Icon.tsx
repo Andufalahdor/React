@@ -6,6 +6,7 @@ import {
   HideIcon,
   SharedIcon,
   SaveIcon,
+  IconAnon,
 } from "../Icons";
 
 export enum EIcons {
@@ -15,6 +16,7 @@ export enum EIcons {
   hide,
   shared,
   save,
+  anone,
 }
 
 const icons = {
@@ -24,6 +26,7 @@ const icons = {
   [EIcons.hide]: <HideIcon />,
   [EIcons.shared]: <SharedIcon />,
   [EIcons.save]: <SaveIcon />,
+  [EIcons.anone]: <IconAnon />,
 };
 
 type TSizes = 8 | 10 | 12 | 14 | 16 | 18 | 36 | 64 | 128;

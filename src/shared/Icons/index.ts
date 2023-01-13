@@ -5,3 +5,4 @@ export * from "./CommentIcon";
 export * from "./HideIcon";
 export * from "./SharedIcon";
 export * from "./SaveIcon";
+export * from "./IconAnon";
