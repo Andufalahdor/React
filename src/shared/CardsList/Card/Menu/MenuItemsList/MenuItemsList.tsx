@@ -1,62 +1,58 @@
 import React from "react";
 import styles from "./menuitemslist.css";
-import { Text, EColors } from "../../../../Text";
-import { Icon, EIcons } from "../../../../Icon";
+import { EColors } from "../../../../Text";
+import { EIcons } from "../../../../Icon";
+import { GenericList } from "../../../../Content/GenericList";
+import { generateId } from "../../../../../utils/react/generateRandomIndex";
 
-interface IMenuItemsListProps {
-  postId?: string;
-}
+const LIST = [
+  {
+    icon: EIcons.comment,
+    iSize: 15,
+    text: "Комментарии",
+    tSize: 14,
+    tColor: EColors.gray99,
+    className: styles.menuItem,
+    divider: true,
+  },
+  {
+    icon: EIcons.shared,
+    text: "Поделиться",
+    tSize: 14,
+    tColor: EColors.gray99,
+    className: styles.menuItem,
+    divider: true,
+  },
+  {
+    icon: EIcons.hide,
+    text: "Скрыть",
+    tSize: 14,
+    tColor: EColors.gray99,
+    className: styles.menuItem,
+    divider: true,
+  },
+  {
+    icon: EIcons.save,
+    text: "Сохранить",
+    tSize: 14,
+    tColor: EColors.gray99,
+    className: styles.menuItem,
+    divider: true,
+  },
+  {
+    icon: EIcons.warning,
+    text: "Пожаловаться",
+    tSize: 14,
+    tColor: EColors.gray99,
+    className: styles.menuItem,
+    divider: true,
+  },
+].map(generateId);
 
-export function MenuItemsList({ postId }: IMenuItemsListProps) {
+export function MenuItemsList() {
   return (
     <ul className={styles.MenuItemsList}>
-      <li className={styles.menuItem}>
-        <Icon name={EIcons.comment} />
-        <Text size={14} color={EColors.gray99}>
-          Комментарии
-        </Text>
-      </li>
-
-      <div className={styles.divider} />
-
-      <li className={styles.menuItem}>
-        <Icon name={EIcons.shared} />
-        <Text size={14} color={EColors.gray99}>
-          Поделиться
-        </Text>
-      </li>
-
-      <div className={styles.divider} />
-
-      <li
-        className={styles.menuItem}
-        onClick={() => {
-          console.log(postId);
-        }}
-      >
-        <Icon name={EIcons.hide} />
-        <Text size={14} color={EColors.gray99}>
-          Скрыть
-        </Text>
-      </li>
-
-      <div className={styles.divider} />
-
-      <li className={styles.menuItem}>
-        <Icon name={EIcons.save} />
-        <Text size={14} color={EColors.gray99}>
-          Сохранить
-        </Text>
-      </li>
-
-      <div className={styles.divider} />
-
-      <li className={styles.menuItem}>
-        <Icon name={EIcons.warning} />
-        <Text size={14} color={EColors.gray99}>
-          Пожаловаться
-        </Text>
-      </li>
+      <GenericList list={LIST} />
     </ul>
   );
 }

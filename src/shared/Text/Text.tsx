@@ -14,12 +14,12 @@ export enum EColors {
   gray99 = "gray99",
   gray66 = "gray66",
 }
-type TSizes = 28 | 20 | 16 | 14 | 12 | 10;
+export type TSizes = 28 | 20 | 16 | 14 | 12 | 10;
 
 interface ItextProps {
   As?: "span" | "h1" | "h2" | "h3" | "h4" | "p" | "div";
   children?: React.ReactNode;
-  size: TSizes;
+  size?: TSizes | number | undefined;
   mobileSize?: TSizes;
   tabletSize?: TSizes;
   desktopSize?: TSizes;
@@ -31,7 +31,7 @@ export function Text(props: ItextProps) {
     As = "span",
     color = EColors.black,
     children,
-    size,
+    size = 10,
     mobileSize,
     tabletSize,
     desktopSize,

@@ -25,7 +25,7 @@ export function Menu() {
       >
         <ul className={styles.dropdown}>
           {/* <GenericList list={LIST} /> */}
-          <MenuItemsList postId="1488" />
+          <MenuItemsList />
           <button className={styles.closeButton}>
             <Text mobileSize={12} size={14} color={EColors.gray66}>
               Закрыть

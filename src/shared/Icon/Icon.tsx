@@ -9,39 +9,30 @@ import {
 } from "../Icons";
 
 export enum EIcons {
-  block = "BlockIcon",
-  warning = "WarningIcon",
-  comment = "CommentIcon",
-  hide = "HideIcon",
-  shared = "SharedIcon",
-  save = "SaveIcon",
+  block,
+  warning,
+  comment,
+  hide,
+  shared,
+  save,
 }
+
+const icons = {
+  [EIcons.block]: <BlockIcon />,
+  [EIcons.warning]: <WarningIcon />,
+  [EIcons.comment]: <CommentIcon />,
+  [EIcons.hide]: <HideIcon />,
+  [EIcons.shared]: <SharedIcon />,
+  [EIcons.save]: <SaveIcon />,
+};
 
 type TSizes = 8 | 10 | 12 | 14 | 16 | 18 | 36 | 64 | 128;
 
-interface IIConProps {
+interface IIconProps {
   name: EIcons;
-  size?: TSizes;
+  size?: TSizes | number;
 }
 
-export function Icon(props: IIConProps) {
-  const { name = EIcons.block, size = 14 } = props;
-  return <>{IconSwitch(name, size)}</>;
-}
-
-function IconSwitch(name: string, size: TSizes): React.ReactNode {
-  switch (name) {
-    case EIcons.block:
-      return <BlockIcon width={size} height={size} />;
-    case EIcons.comment:
-      return <CommentIcon width={size} height={size} />;
-    case EIcons.hide:
-      return <HideIcon width={size} height={size} />;
-    case EIcons.save:
-      return <SaveIcon width={size} height={size} />;
-    case EIcons.shared:
-      return <SharedIcon width={size} height={size} />;
-    case EIcons.warning:
-      return <WarningIcon width={size} height={size} />;
-  }
+export function Icon({ name, size = 14 }: IIconProps) {
+  return <div className={`icon-container-${size}`}>{icons[name]}</div>;
 }
