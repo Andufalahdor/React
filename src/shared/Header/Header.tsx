@@ -4,16 +4,16 @@ import { SearchBlock } from "./SearchBlock/SearchBlock";
 import { SortBlock } from "./SortBlock";
 import { ThreadTitle } from "./ThreadTitle";
 
-interface IHeaderProps {
-  token: string;
-}
+export function Header({}) {
+  // const { Consumer } = TokenContext;
+  // const token = useContext(TokenContext);
 
-export function Header({ token }: IHeaderProps) {
   return (
     <header className={styles.header}>
       <ThreadTitle />
       <SortBlock />
-      <SearchBlock token={token} />
+      {/* <Consumer>{(token) => <SearchBlock token={token} />}</Consumer> */}
+      <SearchBlock />
     </header>
   );
 }
