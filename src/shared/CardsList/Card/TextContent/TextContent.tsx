@@ -1,19 +1,25 @@
-import React from 'react';
-import styles from './textcontent.css';
-import { UserLink } from './UserLink';
-import { Title } from './Title/Title';
+import React from "react";
+import styles from "./textcontent.css";
+import { UserLink } from "./UserLink";
+import { Title } from "./Title/Title";
 
-export function TextContent() {
+interface ITextContentProps {
+  author: string;
+  title: string;
+  time: number;
+}
+
+export function TextContent(props: ITextContentProps) {
   return (
     <div className={styles.textContent}>
       <div className={styles.metaData}>
-        <UserLink />
+        <UserLink author={props.author} />
         <span className={styles.createdAt}>
           <span className={styles.publishedLabel}>опубликовано </span>
-          4 часа назад
-          </span>
+          {props.time}
+        </span>
       </div>
-        <Title />
+      <Title title={props.title} />
     </div>
   );
 }

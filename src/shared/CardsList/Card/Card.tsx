@@ -5,13 +5,31 @@ import { Menu } from "./Menu";
 import { Preview } from "./Preview";
 import { TextContent } from "./TextContent";
 
-export function Card() {
+interface ICardProps {
+  author: string;
+  title: string;
+  img?: string | undefined;
+  score: number;
+  time: number;
+}
+
+export function Card(props: ICardProps) {
   return (
     <li className={styles.card}>
-      <TextContent />
-      <Preview />
+      <TextContent
+        author={props.author}
+        title={props.title}
+        time={props.time}
+      />
+      <Preview
+        img={
+          props.img
+            ? props.img
+            : "https://cdn.dribbble.com/users/11164888/screenshots/18243569/media/72630edb14fbb22a3f6b33583ea88707.jpg"
+        }
+      />
       <Menu />
-      <Controls />
+      <Controls score={props.score} />
     </li>
   );
 }
