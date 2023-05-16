@@ -8,6 +8,7 @@ export interface IPostsContexData {
   created_utc: number;
   score: number;
   img?: string;
+  [key: string]: any;
 }
 
 export const postsContext = React.createContext<Array<IPostsContexData>>([]);

@@ -11,7 +11,7 @@ export function CardsList() {
   const LIST = data
     .map((cv) => {
       return {
-        text: (
+        text : (
           <Card
             author={cv.author}
             title={cv.title}
@@ -20,6 +20,7 @@ export function CardsList() {
             time={cv.created_utc}
           />
         ),
+        key : cv.key
       };
     })
     .map(generateId);

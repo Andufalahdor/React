@@ -28,6 +28,7 @@ export function usePostsData() {
               created_utc: currentValue.data.created_utc,
               score: currentValue.data.score,
               img: currentValue.data.sr_detail.banner_img,
+              key: currentValue.data.id
             };
           }
         );

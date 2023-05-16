@@ -15,6 +15,7 @@ interface IItem {
   tSize?: TSizes | number;
   tColor?: EColors;
   divider?: boolean;
+  key?: string
 }
 
 const NOOP = () => {};
@@ -39,6 +40,7 @@ export function GenericList({ list }: IGenericListProps) {
           tSize,
           tColor,
           divider = false,
+          key
         }) => (
           <>
             <As
@@ -48,7 +50,7 @@ export function GenericList({ list }: IGenericListProps) {
               href={href}
             >
               {icon ? <Icon name={icon} size={iSize} /> : false}
-              <Text size={tSize ? tSize : undefined} color={tColor}>
+              <Text key={key} size={tSize ? tSize : undefined} color={tColor}>
                 {text}
               </Text>
             </As>
