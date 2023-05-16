@@ -9,20 +9,32 @@ import { useToken } from "./hooks/useToken";
 import { TokenContext } from "./shared/context/tokenContex";
 import { UserContextProvider } from "./shared/context/userContext";
 import { PostsContextProvider } from "./shared/context/postsContext";
+import { commentContext } from "./shared/context/commentContext";
 
 export function AppComponent() {
+  const [commentValue, setCommentValue] = useState("");
+
   const [token] = useToken();
+
+  const CommentProvider = commentContext.Provider;
 
   return (
     <TokenContext.Provider value={token}>
       <UserContextProvider>
         <PostsContextProvider>
-          <Layout>
-            <Header />
-            <Content>
-              <CardsList />
-            </Content>
-          </Layout>
+          <CommentProvider
+            value={{
+              value: commentValue,
+              onChange: setCommentValue,
+            }}
+          >
+            <Layout>
+              <Header />
+              <Content>
+                <CardsList />
+              </Content>
+            </Layout>
+          </CommentProvider>
         </PostsContextProvider>
       </UserContextProvider>
     </TokenContext.Provider>

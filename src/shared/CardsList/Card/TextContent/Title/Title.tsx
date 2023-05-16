@@ -12,12 +12,12 @@ export function Title(props: ITitleProps) {
 
   return (
     <h2 className={styles.title}>
-      <a href="#post-url" className={styles.postLink} onClick={() => {setIsModalOpened(true)}}>
+      <a href="#" className={styles.postLink} onClick={() => {setIsModalOpened(true)}}>
         {props.title}
       </a>
 
       {isModalOpened && (
-        <Post onClose={() => { setIsModalOpened(false)}}/>
+        <Post onClose={() => { setIsModalOpened(false) }}/>
       )}
     </h2>
   );

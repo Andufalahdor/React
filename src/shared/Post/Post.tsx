@@ -37,8 +37,8 @@ export function Post(props: IPost) {
     <p>text</p>
       </div>
 
-      <CommentForm / >
+      <CommentForm />
     </div>
   ), node);
-}
+} 
 
