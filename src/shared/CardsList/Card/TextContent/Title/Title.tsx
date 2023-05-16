@@ -10,11 +10,6 @@ export function Title(props: ITitleProps) {
 
   const [isModalOpened, setIsModalOpened] = useState(false)
 
-  const handleClick = () => {
-
-  }
-
-
   return (
     <h2 className={styles.title}>
       <a href="#post-url" className={styles.postLink} onClick={() => {setIsModalOpened(true)}}>
@@ -22,7 +17,7 @@ export function Title(props: ITitleProps) {
       </a>
 
       {isModalOpened && (
-        <Post />
+        <Post onClose={() => { setIsModalOpened(false)}}/>
       )}
     </h2>
   );
